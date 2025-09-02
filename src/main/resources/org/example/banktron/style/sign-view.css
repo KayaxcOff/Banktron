@@ -1,0 +1,21 @@
+.main-pane {
+    -fx-background-color: #2E003E;
+}
+
+.hello-label {
+    -fx-text-fill: white;
+}
+
+.all-buttons {
+    -fx-background-color: #006400;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 2);
+    -fx-transition: all 0.3s ease;
+}
+
+.all-buttons:hover {
+    -fx-background-color: #2E8B57;
+    -fx-effect: dropshadow(gaussian, #000000, 20, 0.7, 0, 4);
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="700.0" styleClass="main-pane" stylesheets="@../style/sign-up-view.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.banktron.controller.SignUpController">
+   <children>
+      <Pane fx:id="infoPane" layoutY="6.0" prefHeight="256.0" prefWidth="700.0" styleClass="info-pane" stylesheets="@../style/sign-up-view.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="66.0" layoutY="45.0" styleClass="all-labels" stylesheets="@../style/sign-up-view.css" text="Please enter your name">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="148.0" styleClass="all-labels" stylesheets="@../style/sign-up-view.css" text="Please enter your password">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" layoutX="385.0" layoutY="43.0" promptText="Your name" styleClass="all-fields" stylesheets="@../style/sign-up-view.css">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="passwordField" layoutX="385.0" layoutY="136.0" promptText="Password" styleClass="all-fields" stylesheets="@../style/sign-up-view.css">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Button fx:id="signButton" layoutX="312.0" layoutY="306.0" mnemonicParsing="false" onAction="#checkSignUp" styleClass="sign-button" stylesheets="@../style/sign-up-view.css" text="Sign Up">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

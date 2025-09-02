@@ -1,0 +1,35 @@
+.main-pane {
+    -fx-background-color: #2E003E;
+}
+
+.info-pane {
+    -fx-background-color: #CBBFA3;
+}
+
+.all-labels {
+    -fx-text-fill: white;
+}
+
+.all-fields {
+    -fx-background-color: #CBBFA3;
+    -fx-border-color: #2E003E;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-text-fill: white;
+}
+
+.sign-button {
+    -fx-background-color: #006400;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 0, 2);
+    -fx-transition: all 0.3s ease;
+}
+
+.sign-button:hover {
+    -fx-background-color: #2E8B57;
+    -fx-effect: dropshadow(gaussian, #000000, 20, 0.7, 0, 4);
+}
