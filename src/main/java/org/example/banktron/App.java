@@ -19,9 +19,7 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         try {
             String FILE_NAME = "banktron.json";
-            if (!Files.exists(Paths.get(FILE_NAME))) {
-                Files.write(Paths.get(FILE_NAME), "[]".getBytes());
-            }
+            if (!Files.exists(Paths.get(FILE_NAME))) Files.write(Paths.get(FILE_NAME), "[]".getBytes());
             FXMLLoader loader = new FXMLLoader(App.class.getResource("fxml/sign-view.fxml"));
             Scene scene = new Scene(loader.load());
             primaryStage.setTitle("Banktron");
