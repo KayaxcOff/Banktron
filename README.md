@@ -62,7 +62,7 @@ banktron/
 
 1. **Projeyi klonlayın:**
 ```bash
-git clone https://github.com/[kullanıcı-adınız]/banktron.git
+git clone https://github.com/KayaxcOff/Banktron.git
 cd banktron
 ```
 
