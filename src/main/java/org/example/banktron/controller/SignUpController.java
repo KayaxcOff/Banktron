@@ -20,7 +20,17 @@ public class SignUpController {
 
     public void checkSignUp() {
         CheckSign checkSign = new CheckSign();
-        boolean isSign = checkSign.signUp(nameField.getText(), passwordField.getText());
+        boolean isSign = false;
+        try {
+            isSign = checkSign.signUp(nameField.getText(), passwordField.getText());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Sign-up error");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+            return;
+        }
         if(isSign) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/banktron/fxml/sign-in-view.fxml"));
