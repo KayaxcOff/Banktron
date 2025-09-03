@@ -3,7 +3,6 @@ package org.example.banktron.func;
 public class BankTransactions {
 
     private final User user;
-    private User recipient;
     private int balance;
 
     public BankTransactions(User user) {
@@ -12,7 +11,7 @@ public class BankTransactions {
     }
 
     public boolean deposit(int amount) {
-        if(amount < 0) {
+        if(amount > 0) {
             balance+=amount;
             user.setBalance(balance);
             return true;
@@ -31,9 +30,8 @@ public class BankTransactions {
         }
     }
 
-    public boolean transfer(int amount) {
-        BankTransactions bankTransactions = new BankTransactions(recipient);
-        if(amount <= 0 || amount <= balance) {
+    public boolean transfer(User recipient ,int amount) {
+        if(amount > 0 && amount <= balance) {
             balance-=amount;
             user.setBalance(balance);
             recipient.setBalance(recipient.getBalance()+amount);

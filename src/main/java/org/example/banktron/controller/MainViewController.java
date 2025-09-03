@@ -1,9 +1,7 @@
 package org.example.banktron.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.example.banktron.func.BankTransactions;
 import org.example.banktron.func.User;
@@ -11,13 +9,7 @@ import org.example.banktron.func.User;
 public class MainViewController {
 
     @FXML
-    private Label nameLabel, balanceLabel, resultLabel;
-
-    @FXML
-    private Button depositButton, withdrawButton, transferButton;
-
-    @FXML
-    private TextArea descrpitionArea;
+    private Label balanceLabel, resultLabel;
 
     @FXML
     private TextField amountField;
@@ -51,7 +43,7 @@ public class MainViewController {
     }
 
     public void transferMoney() {
-        boolean isSuccess = bankTransactions.transfer(Integer.parseInt(amountField.getText()));
+        boolean isSuccess = bankTransactions.transfer(tempraryUser ,Integer.parseInt(amountField.getText()));
         if(isSuccess) {
             resultLabel.setText("Transferred Successfully");
             balanceLabel.setText(String.valueOf(tempraryUser.getBalance()));
