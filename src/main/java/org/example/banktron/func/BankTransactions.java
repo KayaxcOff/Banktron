@@ -2,13 +2,13 @@ package org.example.banktron.func;
 
 public class BankTransactions {
 
-    private User user;
+    private final User user;
     private User recipient;
     private int balance;
 
     public BankTransactions(User user) {
         this.user = user;
-        this.balance = balance;
+        this.balance = user.getBalance();
     }
 
     public boolean deposit(int amount) {

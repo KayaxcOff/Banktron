@@ -11,7 +11,7 @@ import org.example.banktron.func.User;
 public class MainViewController {
 
     @FXML
-    private Label nameLabel, balanceLabel;
+    private Label nameLabel, balanceLabel, resultLabel;
 
     @FXML
     private Button depositButton, withdrawButton, transferButton;
@@ -22,18 +22,41 @@ public class MainViewController {
     @FXML
     private TextField amountField;
 
-    User tempraryUser;
-    BankTransactions bankTransactions = new BankTransactions(tempraryUser);
+    private User tempraryUser;
+    private BankTransactions bankTransactions;
+
+    public void setUser(User user) {
+        this.tempraryUser = user;
+        this.bankTransactions = new BankTransactions(tempraryUser);
+    }
 
     public void depositMoney() {
-        //boolean isTrue = bankTransactions.depositMoney(Integer.getInteger(amountField.getText()));
+        boolean isSuccess = bankTransactions.deposit(Integer.parseInt(amountField.getText()));
+        if(isSuccess) {
+            resultLabel.setText("Deposited Successfully");
+            balanceLabel.setText(String.valueOf(tempraryUser.getBalance()));
+        } else {
+            resultLabel.setText("Deposit Failed");
+        }
     }
 
     public void withdrawMoney() {
-        //bankTransactions.withdrawMoney(Integer.getInteger(amountField.getText()));
+        boolean isSuccess = bankTransactions.withdraw(Integer.parseInt(amountField.getText()));
+        if(isSuccess) {
+            resultLabel.setText("Withdrawn Successfully");
+            balanceLabel.setText(String.valueOf(tempraryUser.getBalance()));
+        } else {
+            resultLabel.setText("Withdraw Failed");
+        }
     }
 
     public void transferMoney() {
-        //bankTransactions.transferMoney(Integer.getInteger(amountField.getText()));
+        boolean isSuccess = bankTransactions.transfer(Integer.parseInt(amountField.getText()));
+        if(isSuccess) {
+            resultLabel.setText("Transferred Successfully");
+            balanceLabel.setText(String.valueOf(tempraryUser.getBalance()));
+        } else {
+            resultLabel.setText("Transfer Failed");
+        }
     }
 }
